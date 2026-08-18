@@ -198,7 +198,8 @@ const canTransfer = hasPermission('inventory.transfer');
   // Calculate stats from stock data as fallback
   useEffect(() => {
     if (stockData.length > 0) {
-      const totalValue = stockData.reduce((sum, s) => sum + (s.stockValue || (s.currentStock * s.price) || 0), 0);
+      // const totalValue = stockData.reduce((sum, s) => sum + (s.stockValue || (s.currentStock * s.price) || 0), 0);
+      const totalValue = stockData.reduce((sum, s) => sum + (s.stockValue || (s.currentStock * s.sellingPrice) || 0), 0);
       const lowCount = stockData.filter((s) => s.currentStock > 0 && s.currentStock < s.minimumStock).length;
       const outCount = stockData.filter((s) => s.currentStock <= 0).length;
       setStats((prev) => ({
@@ -248,7 +249,7 @@ const canTransfer = hasPermission('inventory.transfer');
     // { key: 'category', label: 'Category', render: (val, row) => row.categoryName || row.category || val || '—' },
     { key: 'category', label: 'Category', render: (val, row) => row.categoryName || row.category?.name || row.categoryId?.name || val || '—' },
     { key: 'currentStock', label: 'Current Stock', sortable: true },
-    { key: 'minimumStock', label: 'Min Stock', render: (val) => val ?? '—' },
+    { key: 'minimumStock', label: 'Minimum Stock', render: (val) => val ?? '—' },
     {
       key: 'status',
       label: 'Status',
@@ -261,7 +262,8 @@ const canTransfer = hasPermission('inventory.transfer');
       key: 'stockValue',
       label: 'Stock Value',
       sortable: true,
-      render: (val, row) => formatCurrency(val ?? (row.currentStock * (row.price || row.costPrice || 0))),
+      // render: (val, row) => formatCurrency(val ?? (row.currentStock * (row.price || row.costPrice || 0))),
+      render: (val, row) => formatCurrency(val ?? (row.currentStock * (row.sellingPrice || row.price || row.costPrice || 0))),
     },
   ];
 
