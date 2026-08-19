@@ -1,4 +1,5 @@
-import { useState, useEffect, useCallback } from 'react';
+// import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import toast from 'react-hot-toast';
 import {
   HiOutlinePlus,
@@ -52,15 +53,16 @@ const emptyPayment = {
 function Customers() {
   // const { hasPermission } = useAuth();
   const [customers, setCustomers] = useState([]);
+  // const [stats, setStats] = useState({ totalCustomers: "", totalDue: "" ,totalPurchases: "" });
   const [stats, setStats] = useState({ totalCustomers: 0, totalDue: 0, totalPurchases: 0 });
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [search, setSearch] = useState('');
 const { hasPermission } = useAuth();
-const canCreate = hasPermission('customers.create');  // or 'suppliers.create'
-const canUpdate = hasPermission('customers.update');  // or 'suppliers.update'
-const canDelete = hasPermission('customers.delete');  // or 'suppliers.delete'
+const canCreate = hasPermission('customers.create');
+const canUpdate = hasPermission('customers.update');
+const canDelete = hasPermission('customers.delete');
   const [formModal, setFormModal] = useState(false);
   const [editingCustomer, setEditingCustomer] = useState(null);
   const [form, setForm] = useState(emptyForm);
@@ -85,12 +87,27 @@ const canDelete = hasPermission('customers.delete');  // or 'suppliers.delete'
 
   const limit = 10;
 
-  const fetchCustomers = useCallback(async () => {
+  // const fetchCustomers = useCallback(async () => {
+  //   setLoading(true);
+  //   try {
+  //     const { data } = await customerApi.getAll({ page, limit, search });
+  //     const payload = data.data || data;
+  //     setCustomers(payload.data || payload.customers || (Array.isArray(payload) ? payload : []));
+  //     setTotal(payload.total ?? data.total ?? 0);
+  //     setCustomers(data.data || data);
+  //         setTotal(data.pagination?.total ?? data.total ?? 0);
+  //   } catch (err) {
+  //     toast.error('Failed to load customers');
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }, [page, search]);
+    const fetchCustomers = useCallback(async () => {
     setLoading(true);
     try {
       const { data } = await customerApi.getAll({ page, limit, search });
-      setCustomers(data.data || data.customers || data || []);
-      setTotal(data.total || 0);
+      setCustomers(data.data || data);
+      setTotal(data.pagination?.total ?? data.total ?? 0);
     } catch (err) {
       toast.error('Failed to load customers');
     } finally {
@@ -101,7 +118,7 @@ const canDelete = hasPermission('customers.delete');  // or 'suppliers.delete'
   const fetchStats = useCallback(async () => {
     try {
       const { data } = await customerApi.getStats();
-      setStats(data);
+      setStats(data.data || data);
     } catch {
       // stats are non-critical
     }
@@ -215,7 +232,10 @@ const canDelete = hasPermission('customers.delete');  // or 'suppliers.delete'
     });
     setPaymentModal(true);
   };
-
+  const computedStats = useMemo(() => ({
+    totalDue: customers.reduce((sum, c) => sum + (c.balanceDue ?? c.balance ?? 0), 0),
+    totalPurchases: customers.reduce((sum, c) => sum + (c.totalPurchases ?? 0), 0),
+  }), [customers]);
   const handlePaymentSubmit = async (e) => {
     e.preventDefault();
     if (!payment.amount || Number(payment.amount) <= 0) {
@@ -297,7 +317,7 @@ const canDelete = hasPermission('customers.delete');  // or 'suppliers.delete'
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-        <StatCard
+        {/* <StatCard
           title="Total Customers"
           value={stats.totalCustomers ?? 0}
           icon={HiOutlineUserGroup}
@@ -314,7 +334,28 @@ const canDelete = hasPermission('customers.delete');  // or 'suppliers.delete'
           value={formatCurrency(stats.totalPurchases ?? 0)}
           icon={HiOutlineShoppingCart}
           color="green"
-        />
+        /> */}
+                 <StatCard
+           title="Total Customers"
+          // value={stats.totalCustomers ?? 0}
+          value={stats.totalCustomers || total}
+           icon={HiOutlineUserGroup}
+           color="blue"
+         />
+         <StatCard
+           title="Total Due"
+          // value={formatCurrency(stats.totalDue ?? 0)}
+          value={formatCurrency(stats.totalDue ?? computedStats.totalDue)}
+           icon={HiOutlineCurrencyRupee}
+           color="orange"
+         />
+         <StatCard
+           title="Total Purchases"
+        // value={formatCurrency(stats.totalPurchases ?? 0)}
+       value={formatCurrency(stats.totalPurchases ?? computedStats.totalPurchases)}
+           icon={HiOutlineShoppingCart}
+           color="green"
+         />
       </div>
 
       <DataTable
@@ -554,7 +595,16 @@ const canDelete = hasPermission('customers.delete');  // or 'suppliers.delete'
                   </button>
                 ))}
               </div>
-              {hasPermission('customers.update') && (              <Button                size="sm"                variant="success"                icon={HiOutlineBanknotes}                onClick={() => openPaymentModal(selectedCustomer)}              >                Record Payment              </Button>              )}
+              {hasPermission('customers.update') && (
+                <Button
+                  size="sm"
+                  variant="success"
+                  icon={HiOutlineBanknotes}
+                  onClick={() => openPaymentModal(selectedCustomer)}
+                >
+                  Record Payment
+                </Button>
+              )}
             </div>
 
             {tabLoading ? (
