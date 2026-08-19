@@ -1,6 +1,7 @@
 const Category = require('../models/Category');
 const Product = require('../models/Product');
 const config = require('../config');
+const mongoose = require('mongoose');
 
 class CategoryError extends Error {
   constructor(message, statusCode) { super(message); this.statusCode = statusCode; }
@@ -18,7 +19,14 @@ const getAll = async (businessId, query) => {
     Category.find(filter).sort('-createdAt').skip(skip).limit(limit).lean(),
     Category.countDocuments(filter),
   ]);
-  return { data, page, limit, total };
+  // return { data, page, limit, total };
+   const counts = await Product.aggregate([
+   { $match: { businessId: new mongoose.Types.ObjectId(businessId) } },
+    { $group: { _id: '$categoryId', count: { $sum: 1 } } },
+  ]);
+  const countMap = Object.fromEntries(counts.map(c => [c._id.toString(), c.count]));
+  const dataWithCount = data.map(cat => ({ ...cat, id: cat._id.toString(), productCount: countMap[cat._id.toString()] || 0 }));
+  return { data: dataWithCount, page, limit, total };
 };
 
 const getById = async (id, businessId) => {
