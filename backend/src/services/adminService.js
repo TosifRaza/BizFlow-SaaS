@@ -572,9 +572,23 @@ const getBusinessById = async (id) => {
   };
 };
 
+// const activateBusiness = async (id, userId) => {
+//   const business = await Business.findByIdAndUpdate(id, { status: 'active', subscriptionStatus: 'active' }, { new: true });
+//   if (!business) throw new AdminError('Business not found', 404);
+//   await AuditLog.create({
+//     userId,
+//     businessId: business._id,
+//     action: 'business_activated',
+//     resource: 'business',
+//     resourceId: business._id,
+//     metadata: { businessName: business.name },
+//   });
+//   return business;
+// };
 const activateBusiness = async (id, userId) => {
   const business = await Business.findByIdAndUpdate(id, { status: 'active', subscriptionStatus: 'active' }, { new: true });
   if (!business) throw new AdminError('Business not found', 404);
+  await User.updateMany({ businessId: id }, { status: 'active' });
   await AuditLog.create({
     userId,
     businessId: business._id,
@@ -585,7 +599,6 @@ const activateBusiness = async (id, userId) => {
   });
   return business;
 };
-
 const suspendBusiness = async (id, userId) => {
   const business = await Business.findByIdAndUpdate(id, { status: 'suspended', subscriptionStatus: 'suspended' }, { new: true });
   if (!business) throw new AdminError('Business not found', 404);
