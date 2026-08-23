@@ -341,12 +341,167 @@ class AdminError extends Error {
   constructor(message, statusCode) { super(message); this.statusCode = statusCode; }
 }
 
+// const getDashboard = async () => {
+//   const now = new Date();
+//   const thisMonthStart = new Date(now.getFullYear(), now.getMonth(), 1);
+//   const lastMonthStart = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+//   const twelveMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 11, 1);
+
+//   const [
+//     totalBusinesses,
+//     activeBusinesses,
+//     trialBusinesses,
+//     paidBusinesses,
+//     expiredBusinesses,
+//     totalUsers,
+//     totalPlans,
+//     totalRevenueResult,
+//     recentBusinesses,
+//     thisMonthNewBiz,
+//     lastMonthNewBiz,
+//     thisMonthActiveSubs,
+//     lastMonthActiveSubs,
+//     thisMonthTrialBiz,
+//     lastMonthTrialBiz,
+//     thisMonthPaidBiz,
+//     lastMonthPaidBiz,
+//     thisMonthExpiredBiz,
+//     lastMonthExpiredBiz,
+//     thisMonthRevenue,
+//     lastMonthRevenue,
+//     thisMonthNewUsers,
+//     lastMonthNewUsers,
+//     businessesOverTime,
+//     subscriptionGrowthRaw,
+//     revenueTrendRaw,
+//     planDistributionRaw,
+//     mrrResult,
+//   ] = await Promise.all([
+//     Business.countDocuments(),
+//     Business.countDocuments({ status: 'active', subscriptionStatus: 'active' }),
+//     Business.countDocuments({ subscriptionStatus: 'trial' }),
+//     Business.countDocuments({ subscriptionStatus: 'active', planId: { $ne: null } }),
+//     Business.countDocuments({ subscriptionStatus: 'expired' }),
+//     User.countDocuments({ role: { $ne: 'super_admin' } }),
+//     Plan.countDocuments(),
+//     Payment.aggregate([{ $match: { status: 'completed' } }, { $group: { _id: null, total: { $sum: '$amount' } } }]),
+//     Business.find().sort('-createdAt').limit(5).select('name type subscriptionStatus createdAt').lean(),
+//     Business.countDocuments({ createdAt: { $gte: thisMonthStart, $lt: now } }),
+//     Business.countDocuments({ createdAt: { $gte: lastMonthStart, $lt: thisMonthStart } }),
+//     Business.countDocuments({ subscriptionStatus: 'active', createdAt: { $gte: thisMonthStart, $lt: now } }),
+//     Business.countDocuments({ subscriptionStatus: 'active', createdAt: { $gte: lastMonthStart, $lt: thisMonthStart } }),
+//     Business.countDocuments({ subscriptionStatus: 'trial', createdAt: { $gte: thisMonthStart, $lt: now } }),
+//     Business.countDocuments({ subscriptionStatus: 'trial', createdAt: { $gte: lastMonthStart, $lt: thisMonthStart } }),
+//     Business.countDocuments({ subscriptionStatus: 'active', planId: { $ne: null }, createdAt: { $gte: thisMonthStart, $lt: now } }),
+//     Business.countDocuments({ subscriptionStatus: 'active', planId: { $ne: null }, createdAt: { $gte: lastMonthStart, $lt: thisMonthStart } }),
+//     Business.countDocuments({ subscriptionStatus: 'expired', createdAt: { $gte: thisMonthStart, $lt: now } }),
+//     Business.countDocuments({ subscriptionStatus: 'expired', createdAt: { $gte: lastMonthStart, $lt: thisMonthStart } }),
+//     Payment.aggregate([
+//       { $match: { status: 'completed', createdAt: { $gte: thisMonthStart, $lt: now } } },
+//       { $group: { _id: null, total: { $sum: '$amount' } } },
+//     ]),
+//     Payment.aggregate([
+//       { $match: { status: 'completed', createdAt: { $gte: lastMonthStart, $lt: thisMonthStart } } },
+//       { $group: { _id: null, total: { $sum: '$amount' } } },
+//     ]),
+//     User.countDocuments({ role: { $ne: 'super_admin' }, createdAt: { $gte: thisMonthStart, $lt: now } }),
+//     User.countDocuments({ role: { $ne: 'super_admin' }, createdAt: { $gte: lastMonthStart, $lt: thisMonthStart } }),
+//     Business.aggregate([
+//       { $match: { createdAt: { $gte: twelveMonthsAgo } } },
+//       { $group: { _id: { $dateToString: { format: '%Y-%m', date: '$createdAt' } }, count: { $sum: 1 } } },
+//       { $sort: { _id: 1 } },
+//     ]),
+//     Subscription.aggregate([
+//       { $group: { _id: '$planId', count: { $sum: 1 } } },
+//     ]).then(async (subs) => {
+//       const plans = await Plan.find().lean();
+//       return subs.map((s) => {
+//         const plan = plans.find((p) => p._id.toString() === s._id.toString());
+//         return { plan: plan?.name || 'Unknown', count: s.count };
+//       });
+//     }),
+//     Payment.aggregate([
+//       { $match: { status: 'completed', createdAt: { $gte: twelveMonthsAgo } } },
+//       { $group: { _id: { $dateToString: { format: '%Y-%m', date: '$createdAt' } }, revenue: { $sum: '$amount' } } },
+//       { $sort: { _id: 1 } },
+//     ]),
+//     Business.aggregate([
+//       { $group: { _id: '$planId', count: { $sum: 1 } } },
+//     ]).then(async (bizPlans) => {
+//       const plans = await Plan.find().lean();
+//       return bizPlans.map((bp) => {
+//         const plan = plans.find((p) => p._id.toString() === bp._id.toString());
+//         return { plan: plan?.name || 'Unknown', count: bp.count };
+//       });
+//     }),
+//     Subscription.aggregate([
+//       { $match: { status: { $in: ['active', 'trial'] } } },
+//       { $lookup: { from: 'plans', localField: 'planId', foreignField: '_id', as: 'plan' } },
+//       { $unwind: { path: '$plan', preserveNullAndEmptyArrays: true } },
+//       { $group: { _id: null, total: { $sum: '$plan.price' } } },
+//     ]),
+//   ]);
+
+//   const pctChange = (current, previous) => {
+//     if (previous === 0) return current > 0 ? 100 : 0;
+//     return Math.round(((current - previous) / previous) * 100);
+//   };
+//   const trendDir = (pct) => (pct > 0 ? 'up' : pct < 0 ? 'down' : 'neutral');
+
+//   const totalRevenue = totalRevenueResult[0]?.total || 0;
+//   const mrr = mrrResult[0]?.total || 0;
+//   const thisMonthRev = thisMonthRevenue[0]?.total || 0;
+//   const lastMonthRev = lastMonthRevenue[0]?.total || 0;
+//   const mrrTrendDir = thisMonthActiveSubs >= lastMonthActiveSubs ? 'up' : 'down';
+//   const mrrTrend = pctChange(thisMonthActiveSubs, lastMonthActiveSubs);
+
+//   const stats = {
+//     totalBusinesses,
+//     totalBusinessesTrend: pctChange(thisMonthNewBiz, lastMonthNewBiz),
+//     totalBusinessesTrendDir: trendDir(pctChange(thisMonthNewBiz, lastMonthNewBiz)),
+//     activeBusinesses,
+//     activeBusinessesTrend: pctChange(thisMonthActiveSubs, lastMonthActiveSubs),
+//     activeBusinessesTrendDir: trendDir(pctChange(thisMonthActiveSubs, lastMonthActiveSubs)),
+//     trialBusinesses,
+//     trialBusinessesTrend: pctChange(thisMonthTrialBiz, lastMonthTrialBiz),
+//     trialBusinessesTrendDir: trendDir(pctChange(thisMonthTrialBiz, lastMonthTrialBiz)),
+//     paidBusinesses,
+//     paidBusinessesTrend: pctChange(thisMonthPaidBiz, lastMonthPaidBiz),
+//     paidBusinessesTrendDir: trendDir(pctChange(thisMonthPaidBiz, lastMonthPaidBiz)),
+//     expiredBusinesses,
+//     expiredBusinessesTrend: pctChange(thisMonthExpiredBiz, lastMonthExpiredBiz),
+//     expiredBusinessesTrendDir: trendDir(pctChange(thisMonthExpiredBiz, lastMonthExpiredBiz)),
+//     monthlyRecurringRevenue: mrr,
+//     mrrTrend,
+//     mrrTrendDir,
+//     totalRevenue,
+//     totalRevenueTrend: pctChange(thisMonthRev, lastMonthRev),
+//     totalRevenueTrendDir: trendDir(pctChange(thisMonthRev, lastMonthRev)),
+//     newThisMonth: thisMonthNewBiz,
+//     newThisMonthTrend: pctChange(thisMonthNewBiz, lastMonthNewBiz),
+//     newThisMonthTrendDir: trendDir(pctChange(thisMonthNewBiz, lastMonthNewBiz)),
+//     totalUsers,
+//     totalUsersTrend: pctChange(thisMonthNewUsers, lastMonthNewUsers),
+//     totalUsersTrendDir: trendDir(pctChange(thisMonthNewUsers, lastMonthNewUsers)),
+//     totalPlans,
+//   };
+
+//   return {
+//     stats,
+//     businessesOverTime: businessesOverTime.map((b) => ({ month: b._id, count: b.count })),
+//     subscriptionGrowth: subscriptionGrowthRaw,
+//     revenueTrend: revenueTrendRaw.map((r) => ({ month: r._id, revenue: r.revenue })),
+//     planDistribution: planDistributionRaw,
+//     recentBusinesses,
+//   };
+// };
 const getDashboard = async () => {
   const now = new Date();
   const thisMonthStart = new Date(now.getFullYear(), now.getMonth(), 1);
   const lastMonthStart = new Date(now.getFullYear(), now.getMonth() - 1, 1);
   const twelveMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 11, 1);
 
+  // --- Phase 1: All independent queries ---
   const [
     totalBusinesses,
     activeBusinesses,
@@ -372,9 +527,9 @@ const getDashboard = async () => {
     thisMonthNewUsers,
     lastMonthNewUsers,
     businessesOverTime,
-    subscriptionGrowthRaw,
+    subscriptionGrowthAgg,
     revenueTrendRaw,
-    planDistributionRaw,
+    planDistAgg,
     mrrResult,
   ] = await Promise.all([
     Business.countDocuments(),
@@ -385,7 +540,7 @@ const getDashboard = async () => {
     User.countDocuments({ role: { $ne: 'super_admin' } }),
     Plan.countDocuments(),
     Payment.aggregate([{ $match: { status: 'completed' } }, { $group: { _id: null, total: { $sum: '$amount' } } }]),
-    Business.find().sort('-createdAt').limit(5).select('name type subscriptionStatus createdAt').lean(),
+    Business.find().sort({ createdAt: -1 }).limit(5).select('name type subscriptionStatus createdAt').lean(),
     Business.countDocuments({ createdAt: { $gte: thisMonthStart, $lt: now } }),
     Business.countDocuments({ createdAt: { $gte: lastMonthStart, $lt: thisMonthStart } }),
     Business.countDocuments({ subscriptionStatus: 'active', createdAt: { $gte: thisMonthStart, $lt: now } }),
@@ -413,13 +568,7 @@ const getDashboard = async () => {
     ]),
     Subscription.aggregate([
       { $group: { _id: '$planId', count: { $sum: 1 } } },
-    ]).then(async (subs) => {
-      const plans = await Plan.find().lean();
-      return subs.map((s) => {
-        const plan = plans.find((p) => p._id.toString() === s._id.toString());
-        return { plan: plan?.name || 'Unknown', count: s.count };
-      });
-    }),
+    ]),
     Payment.aggregate([
       { $match: { status: 'completed', createdAt: { $gte: twelveMonthsAgo } } },
       { $group: { _id: { $dateToString: { format: '%Y-%m', date: '$createdAt' } }, revenue: { $sum: '$amount' } } },
@@ -427,13 +576,7 @@ const getDashboard = async () => {
     ]),
     Business.aggregate([
       { $group: { _id: '$planId', count: { $sum: 1 } } },
-    ]).then(async (bizPlans) => {
-      const plans = await Plan.find().lean();
-      return bizPlans.map((bp) => {
-        const plan = plans.find((p) => p._id.toString() === bp._id.toString());
-        return { plan: plan?.name || 'Unknown', count: bp.count };
-      });
-    }),
+    ]),
     Subscription.aggregate([
       { $match: { status: { $in: ['active', 'trial'] } } },
       { $lookup: { from: 'plans', localField: 'planId', foreignField: '_id', as: 'plan' } },
@@ -442,16 +585,31 @@ const getDashboard = async () => {
     ]),
   ]);
 
+  // --- Phase 2: Resolve the two lookups that need Plan names ---
+  const plans = await Plan.find().lean();
+  const planMap = new Map(plans.map(p => [p._id.toString(), p.name]));
+
+  const subscriptionGrowth = subscriptionGrowthAgg.map(s => ({
+    plan: planMap.get(s._id.toString()) || 'Unknown',
+    count: s.count,
+  }));
+
+  const planDistribution = planDistAgg.map(bp => ({
+    plan: planMap.get(bp._id.toString()) || 'Unknown',
+    count: bp.count,
+  }));
+
+  // --- Phase 3: Compute trends ---
   const pctChange = (current, previous) => {
     if (previous === 0) return current > 0 ? 100 : 0;
     return Math.round(((current - previous) / previous) * 100);
   };
   const trendDir = (pct) => (pct > 0 ? 'up' : pct < 0 ? 'down' : 'neutral');
 
-  const totalRevenue = totalRevenueResult[0]?.total || 0;
-  const mrr = mrrResult[0]?.total || 0;
-  const thisMonthRev = thisMonthRevenue[0]?.total || 0;
-  const lastMonthRev = lastMonthRevenue[0]?.total || 0;
+  const totalRevenue = (totalRevenueResult[0] && totalRevenueResult[0].total) ? totalRevenueResult[0].total : 0;
+  const mrr = (mrrResult[0] && mrrResult[0].total) ? mrrResult[0].total : 0;
+  const thisMonthRev = (thisMonthRevenue[0] && thisMonthRevenue[0].total) ? thisMonthRevenue[0].total : 0;
+  const lastMonthRev = (lastMonthRevenue[0] && lastMonthRevenue[0].total) ? lastMonthRevenue[0].total : 0;
   const mrrTrendDir = thisMonthActiveSubs >= lastMonthActiveSubs ? 'up' : 'down';
   const mrrTrend = pctChange(thisMonthActiveSubs, lastMonthActiveSubs);
 
@@ -489,13 +647,18 @@ const getDashboard = async () => {
   return {
     stats,
     businessesOverTime: businessesOverTime.map((b) => ({ month: b._id, count: b.count })),
-    subscriptionGrowth: subscriptionGrowthRaw,
+    subscriptionGrowth,
     revenueTrend: revenueTrendRaw.map((r) => ({ month: r._id, revenue: r.revenue })),
-    planDistribution: planDistributionRaw,
-    recentBusinesses,
+    planDistribution,
+    recentBusinesses: recentBusinesses.map(b => ({
+      id: b._id ? String(b._id) : '',
+      name: b.name || '',
+      type: b.type || '',
+      subscriptionStatus: b.subscriptionStatus || 'trial',
+      createdAt: b.createdAt ? b.createdAt.toISOString() : null,
+    })),
   };
 };
-
 // ──────────────────────────────────────────────────
 // FIX: getBusinesses — populate owner, plan, counts
 // ──────────────────────────────────────────────────
