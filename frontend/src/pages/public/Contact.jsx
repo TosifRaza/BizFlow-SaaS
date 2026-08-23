@@ -71,11 +71,11 @@ function Contact() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">Email</h3>
-                <a href="mailto:support@bizflow.in" className="mt-1 block text-sm text-blue-600 hover:text-blue-700">support@bizflow.in</a>
+                <a href="mailto:razatosif206@gmail.com" className="mt-1 block text-sm text-blue-600 hover:text-blue-700">razatosif206@gmail.com</a>
               </div>
               <div>
                 <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">Phone</h3>
-                <a href="tel:+919876543210" className="mt-1 block text-sm text-blue-600 hover:text-blue-700">+91 98765 43210</a>
+                <a href="tel:+917047389630" className="mt-1 block text-sm text-blue-600 hover:text-blue-700">+91 7047389630</a>
               </div>
               <div>
                 <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">Hours</h3>
@@ -116,7 +116,7 @@ function Contact() {
             <div className="flex items-center gap-8 text-sm">
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-              <a href="mailto:support@bizflow.in" className="hover:text-white transition-colors">support@bizflow.in</a>
+              <a href="mailto:razatosif206@gmail.com" className="hover:text-white transition-colors">razatosif206@gmail.com</a>
             </div>
           </div>
           <div className="mt-8 pt-6 border-t border-gray-800 text-center"><p className="text-sm">© 2026 BizFlow. All rights reserved.</p></div>

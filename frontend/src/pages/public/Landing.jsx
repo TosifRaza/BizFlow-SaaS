@@ -806,8 +806,15 @@ const FAQS = [
   },
 ];
 
-const FAKE_LOGOS = ['FreshMart', 'QuickBill', 'StockPro', 'SalesHub', 'TradeEasy', 'BillKaro'];
-
+// const FAKE_LOGOS = ['FreshMart', 'QuickBill', 'StockPro', 'SalesHub', 'TradeEasy', 'BillKaro'];
+const TRUST_POINTS = [
+  'Inventory & Stock Management',
+  'Sales & Billing',
+  'Customer Management',
+  'Supplier Management',
+  'Business Reports',
+  'Multi-Branch Ready',
+];
 /* ─────────────────────── component ─────────────────────── */
 
 function Landing() {
@@ -973,10 +980,11 @@ function Landing() {
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm font-medium text-gray-400 uppercase tracking-wider mb-8">
-            Trusted by 500+ businesses across India
+            {/* Trusted by 500+ businesses across India */}
+            Built for Small and Growing Businesses Across India
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
-            {FAKE_LOGOS.map((name) => (
+            {TRUST_POINTS.map((name) => (
               <span
                 key={name}
                 className="text-xl font-bold text-gray-300 select-none"
@@ -1201,7 +1209,8 @@ function Landing() {
             Ready to Grow Your Business?
           </h2>
           <p className="mt-4 text-lg text-blue-100">
-            Join 500+ businesses already using BizFlow to streamline their operations.
+            {/* Join 500+ businesses already using BizFlow to streamline their operations. */}
+            Simplify your daily operations and manage your entire business from one place
           </p>
           <Link
             to="/register"
