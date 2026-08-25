@@ -7,6 +7,6 @@ export const supplierApi = {
   update: (id, data) => api.put(`/suppliers/${id}`, data),
   delete: (id) => api.delete(`/suppliers/${id}`),
   getLedger: (id, params) => api.get(`/suppliers/${id}/ledger`, { params }),
-  recordPayment: (id, data) => api.post(`/suppliers/${id}/payments`, data),
+  recordPayment: (id, data) => api.post(`/suppliers/${id}/payment`, data),
   getStats: () => api.get('/suppliers/stats'),
 };

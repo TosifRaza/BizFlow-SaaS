@@ -257,15 +257,24 @@ const recordPayment = async (id, businessId, { amount, paymentMethod, notes }, u
 };
 
 const getStats = async (businessId) => {
-  const [total, active, totalOutstanding] = await Promise.all([
+  const bizId = new mongoose.Types.ObjectId(businessId);
+
+  const [total, active, allCustomers, totalPurchasesResult] = await Promise.all([
     Customer.countDocuments({ businessId }),
     Customer.countDocuments({ businessId, status: 'active' }),
-    Customer.aggregate([{ $match: { businessId, balance: { $gt: 0 } } }, { $group: { _id: null, total: { $sum: '$balance' } } }]),
+    Customer.find({ businessId }, { balance: 1 }).lean(),
+    Sale.aggregate([
+      { $match: { businessId: bizId } },
+      { $group: { _id: null, total: { $sum: { $ifNull: ['$totalAmount', '$total', 0] } } } },
+    ]),
   ]);
+
+  const totalDue = allCustomers.reduce((sum, c) => sum + (Number(c.balance) || 0), 0);
+
   return {
     totalCustomers: total,
-    totalDue: totalOutstanding[0]?.total || 0,
-    totalPurchases: 0,
+    totalDue,
+    totalPurchases: totalPurchasesResult[0]?.total || 0,
   };
 };
 

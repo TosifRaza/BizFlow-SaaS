@@ -774,10 +774,12 @@ function Suppliers() {
   const [total, setTotal] = useState(0);
   const [search, setSearch] = useState('');
   const { hasPermission } = useAuth();
-  const canCreate = hasPermission('customers.create');
-  const canUpdate = hasPermission('customers.update');
-  const canDelete = hasPermission('customers.delete');
-
+  // const canCreate = hasPermission('customers.create');
+  // const canUpdate = hasPermission('customers.update');
+  // const canDelete = hasPermission('customers.delete');
+const canCreate = hasPermission('suppliers.create');
+const canUpdate = hasPermission('suppliers.update');
+const canDelete = hasPermission('suppliers.delete');
   const [formModal, setFormModal] = useState(false);
   const [editingSupplier, setEditingSupplier] = useState(null);
   const [form, setForm] = useState(emptyForm);
