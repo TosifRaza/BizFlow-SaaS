@@ -195,7 +195,18 @@ const canDelete = hasPermission('customers.delete');
         customerApi.getLedger(customer.id),
         customerApi.getById(customer.id),
       ]);
-      setLedgerData(ledgerRes.data.data || ledgerRes.data.ledger || ledgerRes.data || []);
+      // setLedgerData(ledgerRes.data.data || ledgerRes.data.ledger || ledgerRes.data || []);
+      // OR
+//       const lr = ledgerRes.data;
+// setLedgerData(
+//   Array.isArray(lr?.data?.data) ? lr.data.data
+//   : Array.isArray(lr?.data) ? lr.data
+//   : Array.isArray(lr?.ledger) ? lr.ledger
+//   : Array.isArray(lr) ? lr
+//   : []
+// );
+// OR
+setLedgerData(Array.isArray(ledgerRes.data?.data?.data) ? ledgerRes.data.data.data : []);
       const detail = detailRes.data.customer || detailRes.data;
       setSelectedCustomer({ ...customer, ...detail });
       setPurchaseHistory(detail.purchases || []);
@@ -214,7 +225,8 @@ const canDelete = hasPermission('customers.delete');
     try {
       if (tab === 'ledger') {
         const { data } = await customerApi.getLedger(selectedCustomer.id);
-        setLedgerData(data.data || data.ledger || data || []);
+        // setLedgerData(data.data || data.ledger || data || []);
+        setLedgerData(Array.isArray(data?.data?.data) ? data.data.data : []);
       }
     } catch {
       toast.error('Failed to load tab data');

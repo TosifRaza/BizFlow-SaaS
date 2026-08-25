@@ -39,7 +39,7 @@ const update = async (req, res, next) => {
 
 const remove = async (req, res, next) => {
   try {
-    await customerService.remove(req.params.id, req.businessId);
+    await customerService.delete(req.params.id, req.businessId);
     successResponse(res, null, 'Customer deleted');
   } catch (error) {
     next(error);

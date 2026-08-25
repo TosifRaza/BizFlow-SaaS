@@ -7,6 +7,6 @@ export const customerApi = {
   update: (id, data) => api.put(`/customers/${id}`, data),
   delete: (id) => api.delete(`/customers/${id}`),
   getLedger: (id, params) => api.get(`/customers/${id}/ledger`, { params }),
-  recordPayment: (id, data) => api.post(`/customers/${id}/payments`, data),
+  recordPayment: (id, data) => api.post(`/customers/${id}/payment`, data),
   getStats: () => api.get('/customers/stats'),
 };

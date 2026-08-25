@@ -24,7 +24,9 @@ const getAll = async (businessId, query) => {
    { $match: { businessId: new mongoose.Types.ObjectId(businessId) } },
     { $group: { _id: '$categoryId', count: { $sum: 1 } } },
   ]);
-  const countMap = Object.fromEntries(counts.map(c => [c._id.toString(), c.count]));
+  // const countMap = Object.fromEntries(counts.map(c => [c._id.toString(), c.count]));
+
+  const countMap = Object.fromEntries(counts.filter(c => c._id != null).map(c => [c._id.toString(), c.count]));
   const dataWithCount = data.map(cat => ({ ...cat, id: cat._id.toString(), productCount: countMap[cat._id.toString()] || 0 }));
   return { data: dataWithCount, page, limit, total };
 };

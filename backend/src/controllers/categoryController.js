@@ -39,7 +39,7 @@ const update = async (req, res, next) => {
 
 const remove = async (req, res, next) => {
   try {
-    await categoryService.remove(req.params.id, req.businessId);
+    await categoryService.delete(req.params.id, req.businessId);
     successResponse(res, null, 'Category deleted');
   } catch (error) {
     next(error);

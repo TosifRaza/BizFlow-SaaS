@@ -51,11 +51,33 @@ function Categories() {
   const [deleteId, setDeleteId] = useState(null);
   const [deleteLoading, setDeleteLoading] = useState(false);
 
-  const fetchCategories = useCallback(async () => {
+  // const fetchCategories = useCallback(async () => {
+  //   setLoading(true);
+  //   try {
+  //     const { data } = await categoryApi.getAll({ search });
+  //     setCategories(data.data || data.categories || data || []);
+  //   } catch {
+  //     toast.error('Failed to load categories');
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }, [search]);
+    const fetchCategories = useCallback(async () => {
     setLoading(true);
     try {
-      const { data } = await categoryApi.getAll({ search });
-      setCategories(data.data || data.categories || data || []);
+      const res = await categoryApi.getAll({ search });
+      const raw = res.data;
+      let items = [];
+      if (Array.isArray(raw?.data)) {
+        items = raw.data;
+      } else if (Array.isArray(raw)) {
+        items = raw;
+      } else if (raw?.data && !Array.isArray(raw.data) && Array.isArray(raw.data.categories)) {
+        items = raw.data.categories;
+      } else if (raw?.categories && Array.isArray(raw.categories)) {
+        items = raw.categories;
+      }
+      setCategories(items);
     } catch {
       toast.error('Failed to load categories');
     } finally {

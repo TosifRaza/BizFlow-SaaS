@@ -152,28 +152,81 @@ const canTransfer = hasPermission('inventory.transfer');
   }, [movementSearch, movementTypeFilter, dateFrom, dateTo]);
 
   // Fetch low stock
+  // const fetchLowStock = useCallback(async () => {
+  //   setLowStockLoading(true);
+  //   try {
+  //     const { data } = await inventoryApi.getLowStock();
+  //     setLowStock(data.data || data || []);
+  //   } catch {
+  //     toast.error('Failed to load low stock items');
+  //   } finally {
+  //     setLowStockLoading(false);
+  //   }
+  // }, []);
+  // Fetch low stock
   const fetchLowStock = useCallback(async () => {
     setLowStockLoading(true);
     try {
-      const { data } = await inventoryApi.getLowStock();
-      setLowStock(data.data || data || []);
+      const { data: raw } = await inventoryApi.getLowStock();
+      const items = raw?.data || raw || [];
+      setLowStock(items);
+      // Update low stock / out of stock counts from actual data
+      const lowCount = items.filter((i) => (i.currentStock ?? 0) > 0).length;
+      const outCount = items.filter((i) => (i.currentStock ?? 0) <= 0).length;
+      setStats((prev) => ({
+        ...prev,
+        lowStockCount: lowCount,
+        outOfStockCount: outCount,
+      }));
     } catch {
       toast.error('Failed to load low stock items');
     } finally {
       setLowStockLoading(false);
     }
   }, []);
-
+  // // Fetch stats
+  // const fetchStats = useCallback(async () => {
+  //   try {
+  //     const { data } = await inventoryApi.getStockValue();
+  //     setStats((prev) => ({
+  //       ...prev,
+  //       totalStockValue: data.totalStockValue ?? data.totalValue ?? 0,
+  //       totalProducts: data.totalProducts ?? 0,
+  //       lowStockCount: data.lowStockCount ?? 0,
+  //       outOfStockCount: data.outOfStockCount ?? 0,
+  //     }));
+  //   } catch {
+  //     // non-critical
+  //   }
+  // }, []);
   // Fetch stats
+  // const fetchStats = useCallback(async () => {
+  //   try {
+  //     const { data: raw } = await inventoryApi.getStockValue();
+  //     const d = raw?.data || raw;
+  //     setStats((prev) => ({
+  //       ...prev,
+  //       totalStockValue: d.totalStockValue ?? d.totalValue ?? 0,
+  //       totalProducts: d.totalProducts ?? 0,
+  //       lowStockCount: d.lowStockCount ?? 0,
+  //       outOfStockCount: d.outOfStockCount ?? 0,
+  //     }));
+  //   } catch {
+  //     // non-critical
+  //   }
+  // }, []);
+
+    // Fetch stats
   const fetchStats = useCallback(async () => {
     try {
-      const { data } = await inventoryApi.getStockValue();
+      const { data: raw } = await inventoryApi.getStockValue();
+      const d = raw?.data || raw;
       setStats((prev) => ({
         ...prev,
-        totalStockValue: data.totalStockValue ?? data.totalValue ?? 0,
-        totalProducts: data.totalProducts ?? 0,
-        lowStockCount: data.lowStockCount ?? 0,
-        outOfStockCount: data.outOfStockCount ?? 0,
+        totalStockValue: d.totalStockValue ?? d.totalValue ?? 0,
+        totalProducts: d.totalProducts ?? 0,
+        lowStockCount: d.lowStockCount ?? prev.lowStockCount,
+        outOfStockCount: d.outOfStockCount ?? prev.outOfStockCount,
       }));
     } catch {
       // non-critical
@@ -183,7 +236,9 @@ const canTransfer = hasPermission('inventory.transfer');
   useEffect(() => {
     fetchCategories();
     fetchProducts();
-  }, [fetchCategories, fetchProducts]);
+        fetchLowStock();  // <-- ADD THIS
+
+  }, [fetchCategories, fetchProducts,fetchLowStock]);
 
   useEffect(() => {
     fetchStats();
