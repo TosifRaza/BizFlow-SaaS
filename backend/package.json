@@ -1,7 +1,7 @@
 {
-  "name": "bizflow-backend",
+  "name": "StoreX-backend",
   "version": "1.0.0",
-  "description": "BizFlow - Multi-tenant SaaS Business Management Platform Backend",
+  "description": "StoreX - Multi-tenant SaaS Business Management Platform Backend",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
@@ -9,13 +9,13 @@
     "seed": "node src/utils/seed.js"
   },
   "keywords": [
-    "bizflow",
+    "StoreX",
     "saas",
     "pos",
     "inventory",
     "billing"
   ],
-  "author": "BizFlow",
+  "author": "StoreX",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {

@@ -136,7 +136,7 @@
 //       >
 //         <Topbar
 //           onMenuClick={toggleSidebar}
-//           title={business?.name || 'BizFlow'}
+//           title={business?.name || 'StoreX'}
 //           user={user}
 //           unreadCount={unreadCount}
 //         />
@@ -298,7 +298,7 @@ function MainLayout() {
       >
         <Topbar
           onMenuClick={toggleSidebar}
-          title={business?.name || 'BizFlow'}
+          title={business?.name || 'StoreX'}
           user={user}
           unreadCount={unreadCount}
         />

@@ -31,7 +31,7 @@ function About() {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center"><HiOutlineCube className="w-5 h-5 text-white" /></div>
-              <span className="text-xl font-bold text-blue-600">BizFlow</span>
+              <span className="text-xl font-bold text-blue-600">StoreX</span>
             </Link>
             <div className="hidden md:flex items-center gap-8">
               {NAV_LINKS.map((l) => (
@@ -63,9 +63,9 @@ function About() {
       <main className="flex-1 pt-24 pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">About BizFlow</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">About StoreX</h1>
             <p className="mt-4 text-lg text-gray-500 leading-relaxed">
-              BizFlow is an all-in-one business management platform built to help Indian small and medium businesses manage inventory, billing, customers, and suppliers from a single dashboard.
+              StoreX is an all-in-one business management platform built to help Indian small and medium businesses manage inventory, billing, customers, and suppliers from a single dashboard.
             </p>
           </div>
 
@@ -81,7 +81,7 @@ function About() {
           <div className="mt-16 bg-gray-50 rounded-2xl p-8 sm:p-10">
             <h2 className="text-2xl font-bold text-gray-900">Our Mission</h2>
             <p className="mt-4 text-gray-500 leading-relaxed">
-              We started BizFlow because we saw business owners struggling with disconnected tools — one app for billing, another for inventory, spreadsheets for accounting. BizFlow replaces that patchwork with one simple, affordable platform that handles everything. No enterprise price tags. No week-long onboarding. Just sign up and start running your business better today.
+              We started StoreX because we saw business owners struggling with disconnected tools — one app for billing, another for inventory, spreadsheets for accounting. StoreX replaces that patchwork with one simple, affordable platform that handles everything. No enterprise price tags. No week-long onboarding. Just sign up and start running your business better today.
             </p>
           </div>
         </div>
@@ -92,15 +92,15 @@ function About() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center"><HiOutlineCube className="w-5 h-5 text-white" /></div>
-              <span className="text-xl font-bold text-white">BizFlow</span>
+              <span className="text-xl font-bold text-white">StoreX</span>
             </div>
             <div className="flex items-center gap-8 text-sm">
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-              <a href="mailto:support@bizflow.in" className="hover:text-white transition-colors">support@bizflow.in</a>
+              <a href="mailto:support@StoreX.in" className="hover:text-white transition-colors">support@StoreX.in</a>
             </div>
           </div>
-          <div className="mt-8 pt-6 border-t border-gray-800 text-center"><p className="text-sm">&copy; 2026 BizFlow. All rights reserved.</p></div>
+          <div className="mt-8 pt-6 border-t border-gray-800 text-center"><p className="text-sm">&copy; 2026 StoreX. All rights reserved.</p></div>
         </div>
       </footer>
     </div>

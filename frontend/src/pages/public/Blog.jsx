@@ -9,8 +9,8 @@ const NAV_LINKS = [
 ];
 
 const POSTS = [
-  { title: 'Getting Started with BizFlow: A Quick Setup Guide', excerpt: 'Learn how to create your account, add your first products, and make your first sale in under 10 minutes.', date: 'Aug 2026', category: 'Tutorials' },
-  { title: '5 Inventory Mistakes That Cost Small Businesses Money', excerpt: 'Common stock management pitfalls and how BizFlow helps you avoid them.', date: 'Jul 2026', category: 'Business Tips' },
+  { title: 'Getting Started with StoreX: A Quick Setup Guide', excerpt: 'Learn how to create your account, add your first products, and make your first sale in under 10 minutes.', date: 'Aug 2026', category: 'Tutorials' },
+  { title: '5 Inventory Mistakes That Cost Small Businesses Money', excerpt: 'Common stock management pitfalls and how StoreX helps you avoid them.', date: 'Jul 2026', category: 'Business Tips' },
   { title: 'Understanding GST Invoicing for Small Businesses', excerpt: 'A plain-language guide to GST-compliant invoicing requirements in India.', date: 'Jul 2026', category: 'Compliance' },
 ];
 
@@ -31,7 +31,7 @@ function Blog() {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center"><HiOutlineCube className="w-5 h-5 text-white" /></div>
-              <span className="text-xl font-bold text-blue-600">BizFlow</span>
+              <span className="text-xl font-bold text-blue-600">StoreX</span>
             </Link>
             <div className="hidden md:flex items-center gap-8">
               {NAV_LINKS.map((l) => (
@@ -91,15 +91,15 @@ function Blog() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center"><HiOutlineCube className="w-5 h-5 text-white" /></div>
-              <span className="text-xl font-bold text-white">BizFlow</span>
+              <span className="text-xl font-bold text-white">StoreX</span>
             </div>
             <div className="flex items-center gap-8 text-sm">
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-              <a href="mailto:support@bizflow.in" className="hover:text-white transition-colors">support@bizflow.in</a>
+              <a href="mailto:support@StoreX.in" className="hover:text-white transition-colors">support@StoreX.in</a>
             </div>
           </div>
-          <div className="mt-8 pt-6 border-t border-gray-800 text-center"><p className="text-sm">&copy; 2026 BizFlow. All rights reserved.</p></div>
+          <div className="mt-8 pt-6 border-t border-gray-800 text-center"><p className="text-sm">&copy; 2026 StoreX. All rights reserved.</p></div>
         </div>
       </footer>
     </div>

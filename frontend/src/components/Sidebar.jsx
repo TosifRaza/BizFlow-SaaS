@@ -51,7 +51,7 @@ function Sidebar({ isOpen, onClose, items = [], activePath, activeColor = 'blue'
     >
       {/* Logo */}
       <div className="flex items-center justify-between h-16 px-5 border-b border-gray-800">
-        <span className="text-xl font-bold text-white tracking-tight">BizFlow</span>
+        <span className="text-xl font-bold text-white tracking-tight">StoreX</span>
         {/* Mobile close button */}
         <button
           onClick={onClose}
@@ -139,7 +139,7 @@ function Sidebar({ isOpen, onClose, items = [], activePath, activeColor = 'blue'
               className="fixed top-0 left-0 z-40 h-full w-64 bg-gray-900 flex flex-col animate-in slide-in-from-left"
             >
               <div className="flex items-center justify-between h-16 px-5 border-b border-gray-800">
-                <span className="text-xl font-bold text-white tracking-tight">BizFlow</span>
+                <span className="text-xl font-bold text-white tracking-tight">StoreX</span>
                 <button
                   onClick={onClose}
                   className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors cursor-pointer"

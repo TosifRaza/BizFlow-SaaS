@@ -4,7 +4,7 @@ const { successResponse, errorResponse } = require('../utils/response');
 const register = async (req, res, next) => {
   try {
     const result = await authService.register(req.body);
-    successResponse(res, result, 'Registration successful. Welcome to BizFlow!', 201);
+    successResponse(res, result, 'Registration successful. Welcome to StoreX!', 201);
   } catch (error) {
     next(error);
   }

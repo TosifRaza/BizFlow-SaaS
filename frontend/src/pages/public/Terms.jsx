@@ -13,11 +13,11 @@ function Terms() {
           <div className="mt-10 prose prose-sm prose-gray max-w-none space-y-6">
             <section>
               <h2 className="text-lg font-semibold text-gray-900">1. Acceptance of Terms</h2>
-              <p className="text-sm text-gray-600 leading-relaxed mt-2">By accessing or using BizFlow, you agree to be bound by these Terms of Service. If you do not agree, please do not use the platform.</p>
+              <p className="text-sm text-gray-600 leading-relaxed mt-2">By accessing or using StoreX, you agree to be bound by these Terms of Service. If you do not agree, please do not use the platform.</p>
             </section>
             <section>
               <h2 className="text-lg font-semibold text-gray-900">2. Description of Service</h2>
-              <p className="text-sm text-gray-600 leading-relaxed mt-2">BizFlow provides a cloud-based business management platform including inventory management, point-of-sale billing, customer and supplier management, reporting, and related features for Indian businesses.</p>
+              <p className="text-sm text-gray-600 leading-relaxed mt-2">StoreX provides a cloud-based business management platform including inventory management, point-of-sale billing, customer and supplier management, reporting, and related features for Indian businesses.</p>
             </section>
             <section>
               <h2 className="text-lg font-semibold text-gray-900">3. User Accounts</h2>
@@ -29,11 +29,11 @@ function Terms() {
             </section>
             <section>
               <h2 className="text-lg font-semibold text-gray-900">5. Limitation of Liability</h2>
-              <p className="text-sm text-gray-600 leading-relaxed mt-2">BizFlow is provided &quot;as is&quot; without warranties of any kind. We shall not be liable for any indirect, incidental, or consequential damages arising from your use of the service.</p>
+              <p className="text-sm text-gray-600 leading-relaxed mt-2">StoreX is provided &quot;as is&quot; without warranties of any kind. We shall not be liable for any indirect, incidental, or consequential damages arising from your use of the service.</p>
             </section>
             <section>
               <h2 className="text-lg font-semibold text-gray-900">6. Contact</h2>
-              <p className="text-sm text-gray-600 leading-relaxed mt-2">For questions about these terms, contact us at <a href="mailto:support@bizflow.in" className="text-blue-600 hover:text-blue-700">support@bizflow.in</a>.</p>
+              <p className="text-sm text-gray-600 leading-relaxed mt-2">For questions about these terms, contact us at <a href="mailto:support@StoreX.in" className="text-blue-600 hover:text-blue-700">support@StoreX.in</a>.</p>
             </section>
           </div>
         </div>
@@ -42,9 +42,9 @@ function Terms() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center"><HiOutlineCube className="w-5 h-5 text-white" /></div>
-            <span className="text-xl font-bold text-white">BizFlow</span>
+            <span className="text-xl font-bold text-white">StoreX</span>
           </div>
-          <p className="text-sm">© 2026 BizFlow. All rights reserved.</p>
+          <p className="text-sm">© 2026 StoreX. All rights reserved.</p>
         </div>
       </footer>
     </div>

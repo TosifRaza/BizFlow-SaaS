@@ -154,7 +154,7 @@ function Subscription() {
     <div>
       <PageHeader
         title="Subscription"
-        subtitle="Manage your BizFlow subscription plan"
+        subtitle="Manage your StoreX subscription plan"
       />
 
       {/* Current Plan Card */}

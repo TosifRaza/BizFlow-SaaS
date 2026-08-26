@@ -144,7 +144,7 @@ function Register() {
       <div className="text-center mb-6">
         <h1 className="text-2xl font-bold text-gray-900">Create your account</h1>
         <p className="text-sm text-gray-500 mt-1.5">
-          Start managing your business with BizFlow
+          Start managing your business with StoreX
         </p>
       </div>
 

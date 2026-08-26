@@ -30,7 +30,7 @@ function Careers() {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center"><HiOutlineCube className="w-5 h-5 text-white" /></div>
-              <span className="text-xl font-bold text-blue-600">BizFlow</span>
+              <span className="text-xl font-bold text-blue-600">StoreX</span>
             </Link>
             <div className="hidden md:flex items-center gap-8">
               {NAV_LINKS.map((l) => (
@@ -79,7 +79,7 @@ function Careers() {
                     </div>
                     <p className="mt-2 text-sm text-gray-500">{job.desc}</p>
                   </div>
-                  <a href="mailto:careers@bizflow.in?subject=Application: {job.title}" className="shrink-0 inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors">
+                  <a href="mailto:careers@StoreX.in?subject=Application: {job.title}" className="shrink-0 inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors">
                     Apply
                   </a>
                 </div>
@@ -88,7 +88,7 @@ function Careers() {
           </div>
 
           <div className="mt-16 text-center">
-            <p className="text-sm text-gray-500">Don&apos;t see a role that fits? <a href="mailto:careers@bizflow.in" className="font-medium text-blue-600 hover:text-blue-700">Send us your resume</a>.</p>
+            <p className="text-sm text-gray-500">Don&apos;t see a role that fits? <a href="mailto:careers@StoreX.in" className="font-medium text-blue-600 hover:text-blue-700">Send us your resume</a>.</p>
           </div>
         </div>
       </main>
@@ -98,15 +98,15 @@ function Careers() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center"><HiOutlineCube className="w-5 h-5 text-white" /></div>
-              <span className="text-xl font-bold text-white">BizFlow</span>
+              <span className="text-xl font-bold text-white">StoreX</span>
             </div>
             <div className="flex items-center gap-8 text-sm">
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-              <a href="mailto:support@bizflow.in" className="hover:text-white transition-colors">support@bizflow.in</a>
+              <a href="mailto:support@StoreX.in" className="hover:text-white transition-colors">support@StoreX.in</a>
             </div>
           </div>
-          <div className="mt-8 pt-6 border-t border-gray-800 text-center"><p className="text-sm">© 2026 BizFlow. All rights reserved.</p></div>
+          <div className="mt-8 pt-6 border-t border-gray-800 text-center"><p className="text-sm">© 2026 StoreX. All rights reserved.</p></div>
         </div>
       </footer>
     </div>

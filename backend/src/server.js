@@ -6,7 +6,7 @@ const startServer = async () => {
   try {
     await connectDB();
     app.listen(config.port, () => {
-      console.log(`\n  BizFlow API Server`);
+      console.log(`\n  StoreX API Server`);
       console.log(`  Environment: ${config.env}`);
       console.log(`  Running on: http://localhost:${config.port}`);
       console.log(`  API prefix: http://localhost:${config.port}/api`);

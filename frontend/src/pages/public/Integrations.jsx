@@ -34,7 +34,7 @@ function Integrations() {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center"><HiOutlineCube className="w-5 h-5 text-white" /></div>
-              <span className="text-xl font-bold text-blue-600">BizFlow</span>
+              <span className="text-xl font-bold text-blue-600">StoreX</span>
             </Link>
             <div className="hidden md:flex items-center gap-8">
               {NAV_LINKS.map((l) => (
@@ -67,7 +67,7 @@ function Integrations() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Integrations</h1>
-            <p className="mt-4 text-lg text-gray-500">Connect BizFlow with the tools you already use to run your business.</p>
+            <p className="mt-4 text-lg text-gray-500">Connect StoreX with the tools you already use to run your business.</p>
           </div>
 
           <div className="mt-16 space-y-4">
@@ -89,7 +89,7 @@ function Integrations() {
           </div>
 
           <div className="mt-16 text-center">
-            <p className="text-sm text-gray-500">Need a specific integration? <a href="mailto:support@bizflow.in" className="font-medium text-blue-600 hover:text-blue-700">Contact us</a>.</p>
+            <p className="text-sm text-gray-500">Need a specific integration? <a href="mailto:support@StoreX.in" className="font-medium text-blue-600 hover:text-blue-700">Contact us</a>.</p>
           </div>
         </div>
       </main>
@@ -99,15 +99,15 @@ function Integrations() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center"><HiOutlineCube className="w-5 h-5 text-white" /></div>
-              <span className="text-xl font-bold text-white">BizFlow</span>
+              <span className="text-xl font-bold text-white">StoreX</span>
             </div>
             <div className="flex items-center gap-8 text-sm">
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-              <a href="mailto:support@bizflow.in" className="hover:text-white transition-colors">support@bizflow.in</a>
+              <a href="mailto:support@StoreX.in" className="hover:text-white transition-colors">support@StoreX.in</a>
             </div>
           </div>
-          <div className="mt-8 pt-6 border-t border-gray-800 text-center"><p className="text-sm">&copy; 2026 BizFlow. All rights reserved.</p></div>
+          <div className="mt-8 pt-6 border-t border-gray-800 text-center"><p className="text-sm">&copy; 2026 StoreX. All rights reserved.</p></div>
         </div>
       </footer>
     </div>

@@ -153,7 +153,7 @@
 //   },
 //   {
 //     q: 'Do I need special hardware?',
-//     a: 'No. BizFlow works on any device with a web browser — laptop, tablet, or mobile phone. No additional hardware or software installation needed.',
+//     a: 'No. StoreX works on any device with a web browser — laptop, tablet, or mobile phone. No additional hardware or software installation needed.',
 //   },
 //   {
 //     q: 'Can I manage multiple branches?',
@@ -203,7 +203,7 @@
 //               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
 //                 <HiOutlineCube className="w-5 h-5 text-white" />
 //               </div>
-//               <span className="text-xl font-bold text-blue-600">BizFlow</span>
+//               <span className="text-xl font-bold text-blue-600">StoreX</span>
 //             </Link>
 
 //             {/* Desktop links */}
@@ -418,7 +418,7 @@
 //               Built For Every Business Type
 //             </h2>
 //             <p className="mt-4 text-lg text-gray-500">
-//               Whether you run a kirana store or a wholesale operation — BizFlow adapts to you.
+//               Whether you run a kirana store or a wholesale operation — StoreX adapts to you.
 //             </p>
 //           </div>
 
@@ -504,7 +504,7 @@
 //               Frequently Asked Questions
 //             </h2>
 //             <p className="mt-4 text-lg text-gray-500">
-//               Everything you need to know about BizFlow.
+//               Everything you need to know about StoreX.
 //             </p>
 //           </div>
 
@@ -560,7 +560,7 @@
 //             Ready to Grow Your Business?
 //           </h2>
 //           <p className="mt-4 text-lg text-blue-100">
-//             Join 500+ businesses already using BizFlow to streamline their operations.
+//             Join 500+ businesses already using StoreX to streamline their operations.
 //           </p>
 //           <Link
 //             to="/register"
@@ -582,7 +582,7 @@
 //                 <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
 //                   <HiOutlineCube className="w-5 h-5 text-white" />
 //                 </div>
-//                 <span className="text-xl font-bold text-white">BizFlow</span>
+//                 <span className="text-xl font-bold text-white">StoreX</span>
 //               </Link>
 //               <p className="mt-4 text-sm leading-relaxed max-w-xs">
 //                 The all-in-one business management platform for Indian businesses.
@@ -626,9 +626,9 @@
 
 //           {/* Bottom bar */}
 //           <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-//             <p className="text-sm">&copy; 2026 BizFlow. All rights reserved.</p>
+//             <p className="text-sm">&copy; 2026 StoreX. All rights reserved.</p>
 //             <div className="flex items-center gap-6">
-//               <a href="#" className="text-sm hover:text-white transition-colors">support@bizflow.in</a>
+//               <a href="#" className="text-sm hover:text-white transition-colors">support@StoreX.in</a>
 //               <a href="#" className="text-sm hover:text-white transition-colors">+91 98765 43210</a>
 //             </div>
 //           </div>
@@ -794,7 +794,7 @@ const FAQS = [
   },
   {
     q: 'Do I need special hardware?',
-    a: 'No. BizFlow works on any device with a web browser — laptop, tablet, or mobile phone. No additional hardware or software installation needed.',
+    a: 'No. StoreX works on any device with a web browser — laptop, tablet, or mobile phone. No additional hardware or software installation needed.',
   },
   {
     q: 'Can I manage multiple branches?',
@@ -851,7 +851,7 @@ function Landing() {
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
                 <HiOutlineCube className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-blue-600">BizFlow</span>
+              <span className="text-xl font-bold text-blue-600">StoreX</span>
             </Link>
 
             {/* Desktop links */}
@@ -1067,7 +1067,7 @@ function Landing() {
               Built For Every Business Type
             </h2>
             <p className="mt-4 text-lg text-gray-500">
-              Whether you run a kirana store or a wholesale operation — BizFlow adapts to you.
+              Whether you run a kirana store or a wholesale operation — StoreX adapts to you.
             </p>
           </div>
 
@@ -1153,7 +1153,7 @@ function Landing() {
               Frequently Asked Questions
             </h2>
             <p className="mt-4 text-lg text-gray-500">
-              Everything you need to know about BizFlow.
+              Everything you need to know about StoreX.
             </p>
           </div>
 
@@ -1209,7 +1209,7 @@ function Landing() {
             Ready to Grow Your Business?
           </h2>
           <p className="mt-4 text-lg text-blue-100">
-            {/* Join 500+ businesses already using BizFlow to streamline their operations. */}
+            {/* Join 500+ businesses already using StoreX to streamline their operations. */}
             Simplify your daily operations and manage your entire business from one place
           </p>
           <Link
@@ -1232,7 +1232,7 @@ function Landing() {
                 <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
                   <HiOutlineCube className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-xl font-bold text-white">BizFlow</span>
+                <span className="text-xl font-bold text-white">StoreX</span>
               </Link>
               <p className="mt-4 text-sm leading-relaxed max-w-xs">
                 The all-in-one business management platform for Indian businesses.
@@ -1276,9 +1276,9 @@ function Landing() {
 
           {/* Bottom bar */}
           <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm">&copy; 2026 BizFlow. All rights reserved.</p>
+            <p className="text-sm">&copy; 2026 StoreX. All rights reserved.</p>
             <div className="flex items-center gap-6">
-              <a href="mailto:support@bizflow.in" className="text-sm hover:text-white transition-colors">support@bizflow.in</a>
+              <a href="mailto:support@StoreX.in" className="text-sm hover:text-white transition-colors">support@StoreX.in</a>
               <a href="tel:+919876543210" className="text-sm hover:text-white transition-colors">+91 98765 43210</a>
             </div>
           </div>

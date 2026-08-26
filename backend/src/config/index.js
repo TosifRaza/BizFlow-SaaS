@@ -3,7 +3,7 @@ require('dotenv').config();
 const config = {
   env: process.env.NODE_ENV || 'development',
   port: parseInt(process.env.PORT, 10) || 5000,
-  mongoUri: process.env.MONGO_URI || 'mongodb://localhost:27017/bizflow',
+  mongoUri: process.env.MONGO_URI || 'mongodb://localhost:27017/StoreX',
   jwt: {
     secret: process.env.JWT_SECRET || 'fallback-jwt-secret-change-me',
     refreshSecret: process.env.JWT_REFRESH_SECRET || 'fallback-refresh-secret-change-me',

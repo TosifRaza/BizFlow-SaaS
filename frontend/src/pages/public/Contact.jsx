@@ -21,7 +21,7 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.location.href = `mailto:support@bizflow.in?subject=${encodeURIComponent(form.subject || 'Contact Form')}&body=${encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)}`;
+    window.location.href = `mailto:support@StoreX.in?subject=${encodeURIComponent(form.subject || 'Contact Form')}&body=${encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)}`;
   };
 
   return (
@@ -31,7 +31,7 @@ function Contact() {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center"><HiOutlineCube className="w-5 h-5 text-white" /></div>
-              <span className="text-xl font-bold text-blue-600">BizFlow</span>
+              <span className="text-xl font-bold text-blue-600">StoreX</span>
             </Link>
             <div className="hidden md:flex items-center gap-8">
               {NAV_LINKS.map((l) => (
@@ -111,7 +111,7 @@ function Contact() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center"><HiOutlineCube className="w-5 h-5 text-white" /></div>
-              <span className="text-xl font-bold text-white">BizFlow</span>
+              <span className="text-xl font-bold text-white">StoreX</span>
             </div>
             <div className="flex items-center gap-8 text-sm">
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
@@ -119,7 +119,7 @@ function Contact() {
               <a href="mailto:razatosif206@gmail.com" className="hover:text-white transition-colors">razatosif206@gmail.com</a>
             </div>
           </div>
-          <div className="mt-8 pt-6 border-t border-gray-800 text-center"><p className="text-sm">© 2026 BizFlow. All rights reserved.</p></div>
+          <div className="mt-8 pt-6 border-t border-gray-800 text-center"><p className="text-sm">© 2026 StoreX. All rights reserved.</p></div>
         </div>
       </footer>
     </div>

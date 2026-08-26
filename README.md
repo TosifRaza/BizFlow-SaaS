@@ -1,4 +1,4 @@
-# BizFlow - Small Business Management & Inventory SaaS
+# StoreX - Small Business Management & Inventory SaaS
 
 > "Simple Business Management for Small Businesses"
 
@@ -18,7 +18,7 @@ A multi-tenant SaaS platform for Indian SMBs to manage inventory, sales, custome
 ## Project Structure
 
 ```
-bizflow/
+StoreX/
 ├── backend/                # Express.js API server
 │   ├── src/
 │   │   ├── config/         # DB connection, environment config
@@ -84,7 +84,7 @@ bizflow/
 ### Backend Setup
 
 ```bash
-cd bizflow/backend
+cd StoreX/backend
 npm install
 
 # Configure environment
@@ -98,7 +98,7 @@ npm run dev
 ### Frontend Setup
 
 ```bash
-cd bizflow/frontend
+cd StoreX/frontend
 npm install
 
 # Start development server (proxies /api to backend on port 5000)
@@ -108,13 +108,13 @@ npm run dev
 ### Seed Demo Data
 
 ```bash
-cd bizflow/backend
+cd StoreX/backend
 npm run seed
 ```
 
 Demo credentials after seeding:
-- **Business Owner**: demo@bizflow.com / Demo@123
-- **Super Admin**: admin@bizflow.com / Admin@123
+- **Business Owner**: demo@StoreX.com / Demo@123
+- **Super Admin**: admin@StoreX.com / Admin@123
 
 ### Access
 - Frontend: http://localhost:5173

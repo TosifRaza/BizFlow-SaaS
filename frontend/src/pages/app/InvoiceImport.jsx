@@ -505,7 +505,7 @@
 //                     {isDragActive ? 'Drop your invoice here' : 'Upload a supplier/dealer invoice'}
 //                   </p>
 //                   <p className="mt-1 text-sm text-gray-500">
-//                     BizFlow will extract the products and purchase details for you. Review everything before importing.
+//                     StoreX will extract the products and purchase details for you. Review everything before importing.
 //                   </p>
 //                 </div>
 //                 <div className="flex items-center justify-center gap-3">
@@ -1695,7 +1695,7 @@ function InvoiceImport() {
                     {isDragActive ? 'Drop your invoice here' : 'Upload a supplier/dealer invoice'}
                   </p>
                   <p className="mt-1 text-sm text-gray-500">
-                    BizFlow will extract the products and purchase details for you. Review everything before importing.
+                    StoreX will extract the products and purchase details for you. Review everything before importing.
                   </p>
                 </div>
                 <div className="flex items-center justify-center gap-3">

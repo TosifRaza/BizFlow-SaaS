@@ -17,11 +17,11 @@ function Cookies() {
             </section>
             <section>
               <h2 className="text-lg font-semibold text-gray-900">How We Use Cookies</h2>
-              <p className="text-sm text-gray-600 leading-relaxed mt-2">BizFlow uses essential cookies to authenticate your session and maintain your logged-in state. We do not use advertising or tracking cookies. No third-party cookies are set on our platform.</p>
+              <p className="text-sm text-gray-600 leading-relaxed mt-2">StoreX uses essential cookies to authenticate your session and maintain your logged-in state. We do not use advertising or tracking cookies. No third-party cookies are set on our platform.</p>
             </section>
             <section>
               <h2 className="text-lg font-semibold text-gray-900">Managing Cookies</h2>
-              <p className="text-sm text-gray-600 leading-relaxed mt-2">You can control or delete cookies through your browser settings. Disabling essential cookies may affect the functionality of BizFlow. For help, contact <a href="mailto:support@bizflow.in" className="text-blue-600 hover:text-blue-700">support@bizflow.in</a>.</p>
+              <p className="text-sm text-gray-600 leading-relaxed mt-2">You can control or delete cookies through your browser settings. Disabling essential cookies may affect the functionality of StoreX. For help, contact <a href="mailto:support@StoreX.in" className="text-blue-600 hover:text-blue-700">support@StoreX.in</a>.</p>
             </section>
           </div>
         </div>
@@ -30,9 +30,9 @@ function Cookies() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center"><HiOutlineCube className="w-5 h-5 text-white" /></div>
-            <span className="text-xl font-bold text-white">BizFlow</span>
+            <span className="text-xl font-bold text-white">StoreX</span>
           </div>
-          <p className="text-sm">© 2026 BizFlow. All rights reserved.</p>
+          <p className="text-sm">© 2026 StoreX. All rights reserved.</p>
         </div>
       </footer>
     </div>

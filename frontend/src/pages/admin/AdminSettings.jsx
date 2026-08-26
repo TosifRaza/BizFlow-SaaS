@@ -18,8 +18,8 @@ const TABS = [
 ];
 
 const INITIAL_PLATFORM = {
-  platformName: 'BizFlow',
-  supportEmail: 'support@bizflow.com',
+  platformName: 'StoreX',
+  supportEmail: 'support@StoreX.com',
   defaultTrialDays: '14',
 };
 
@@ -180,7 +180,7 @@ function AdminSettings() {
       {activeTab === 'platform' && (
         <div className="bg-white rounded-xl border border-gray-200 p-6">
           <h3 className="text-base font-semibold text-gray-900 mb-1">Platform Configuration</h3>
-          <p className="text-sm text-gray-500 mb-6">Global settings for the BizFlow platform.</p>
+          <p className="text-sm text-gray-500 mb-6">Global settings for the StoreX platform.</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
             <FormInput
@@ -189,7 +189,7 @@ function AdminSettings() {
               required
               value={platform.platformName}
               onChange={(e) => handlePlatformChange('platformName', e.target.value)}
-              placeholder="BizFlow"
+              placeholder="StoreX"
             />
             <FormInput
               label="Support Email"
@@ -198,7 +198,7 @@ function AdminSettings() {
               required
               value={platform.supportEmail}
               onChange={(e) => handlePlatformChange('supportEmail', e.target.value)}
-              placeholder="support@bizflow.com"
+              placeholder="support@StoreX.com"
             />
             <FormInput
               label="Default Trial Days"
@@ -249,7 +249,7 @@ function AdminSettings() {
               required
               value={email.smtpUser}
               onChange={(e) => handleEmailChange('smtpUser', e.target.value)}
-              placeholder="noreply@bizflow.com"
+              placeholder="noreply@StoreX.com"
             />
             <FormInput
               label="SMTP Password"

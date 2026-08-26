@@ -21,7 +21,7 @@ function AuthLayout() {
             <HiOutlineCube className="w-5 h-5 text-white" />
           </div>
           <span className="text-xl font-bold text-gray-900 tracking-tight">
-            BizFlow
+            StoreX
           </span>
         </a>
       </div>
@@ -38,7 +38,7 @@ function AuthLayout() {
       {/* Footer */}
       <footer className="relative z-10 text-center py-6 px-4">
         <p className="text-xs text-gray-400">
-          &copy; {new Date().getFullYear()} BizFlow. All rights reserved.
+          &copy; {new Date().getFullYear()} StoreX. All rights reserved.
         </p>
       </footer>
     </div>
@@ -69,7 +69,7 @@ export default AuthLayout;
 //             <HiOutlineCube className="w-5 h-5 text-white" />
 //           </div>
 //           <span className="text-xl font-bold text-gray-900 tracking-tight">
-//             BizFlow
+//             StoreX
 //           </span>
 //         </Link>
 //       </div>
@@ -86,7 +86,7 @@ export default AuthLayout;
 //       {/* Footer */}
 //       <footer className="relative z-10 text-center py-6 px-4">
 //         <p className="text-xs text-gray-400">
-//           &copy; {new Date().getFullYear()} BizFlow. All rights reserved.
+//           &copy; {new Date().getFullYear()} StoreX. All rights reserved.
 //         </p>
 //       </footer>
 //     </div>

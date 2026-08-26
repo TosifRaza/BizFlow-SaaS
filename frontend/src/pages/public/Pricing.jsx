@@ -94,7 +94,7 @@
 // //               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
 // //                 <HiOutlineCube className="w-5 h-5 text-white" />
 // //               </div>
-// //               <span className="text-xl font-bold text-blue-600">BizFlow</span>
+// //               <span className="text-xl font-bold text-blue-600">StoreX</span>
 // //             </Link>
 
 // //             {/* Desktop links */}
@@ -246,7 +246,7 @@
 // //                 Check our FAQ
 // //               </Link>{' '}
 // //               or{' '}
-// //               <a href="mailto:support@bizflow.in" className="font-medium text-blue-600 hover:text-blue-700 transition-colors">
+// //               <a href="mailto:support@StoreX.in" className="font-medium text-blue-600 hover:text-blue-700 transition-colors">
 // //                 contact support
 // //               </a>
 // //               .
@@ -263,16 +263,16 @@
 // //               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
 // //                 <HiOutlineCube className="w-5 h-5 text-white" />
 // //               </div>
-// //               <span className="text-xl font-bold text-white">BizFlow</span>
+// //               <span className="text-xl font-bold text-white">StoreX</span>
 // //             </div>
 // //             <div className="flex items-center gap-8 text-sm">
 // //               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
 // //               <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-// //               <a href="mailto:support@bizflow.in" className="hover:text-white transition-colors">support@bizflow.in</a>
+// //               <a href="mailto:support@StoreX.in" className="hover:text-white transition-colors">support@StoreX.in</a>
 // //             </div>
 // //           </div>
 // //           <div className="mt-8 pt-6 border-t border-gray-800 text-center">
-// //             <p className="text-sm">&copy; 2026 BizFlow. All rights reserved.</p>
+// //             <p className="text-sm">&copy; 2026 StoreX. All rights reserved.</p>
 // //           </div>
 // //         </div>
 // //       </footer>
@@ -377,7 +377,7 @@
 //               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
 //                 <HiOutlineCube className="w-5 h-5 text-white" />
 //               </div>
-//               <span className="text-xl font-bold text-blue-600">BizFlow</span>
+//               <span className="text-xl font-bold text-blue-600">StoreX</span>
 //             </Link>
 
 //             {/* Desktop links */}
@@ -529,7 +529,7 @@
 //                 Check our FAQ
 //               </Link>{' '}
 //               or{' '}
-//               <a href="mailto:support@bizflow.in" className="font-medium text-blue-600 hover:text-blue-700 transition-colors">
+//               <a href="mailto:support@StoreX.in" className="font-medium text-blue-600 hover:text-blue-700 transition-colors">
 //                 contact support
 //               </a>
 //               .
@@ -546,16 +546,16 @@
 //               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
 //                 <HiOutlineCube className="w-5 h-5 text-white" />
 //               </div>
-//               <span className="text-xl font-bold text-white">BizFlow</span>
+//               <span className="text-xl font-bold text-white">StoreX</span>
 //             </div>
 //             <div className="flex items-center gap-8 text-sm">
 //               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
 //               <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-//               <a href="mailto:support@bizflow.in" className="hover:text-white transition-colors">support@bizflow.in</a>
+//               <a href="mailto:support@StoreX.in" className="hover:text-white transition-colors">support@StoreX.in</a>
 //             </div>
 //           </div>
 //           <div className="mt-8 pt-6 border-t border-gray-800 text-center">
-//             <p className="text-sm">&copy; 2026 BizFlow. All rights reserved.</p>
+//             <p className="text-sm">&copy; 2026 StoreX. All rights reserved.</p>
 //           </div>
 //         </div>
 //       </footer>
@@ -649,7 +649,7 @@ function Pricing() {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center"><HiOutlineCube className="w-5 h-5 text-white" /></div>
-              <span className="text-xl font-bold text-blue-600">BizFlow</span>
+              <span className="text-xl font-bold text-blue-600">StoreX</span>
             </Link>
             <div className="hidden md:flex items-center gap-8">
               {NAV_LINKS.map((l) => (
@@ -712,7 +712,7 @@ function Pricing() {
           </div>
 
           <div className="mt-16 text-center">
-            <p className="text-sm text-gray-500">Have questions? <Link to="/#about" className="font-medium text-blue-600 hover:text-blue-700 transition-colors">Check our FAQ</Link> or <a href="mailto:support@bizflow.in" className="font-medium text-blue-600 hover:text-blue-700 transition-colors">contact support</a>.</p>
+            <p className="text-sm text-gray-500">Have questions? <Link to="/#about" className="font-medium text-blue-600 hover:text-blue-700 transition-colors">Check our FAQ</Link> or <a href="mailto:support@StoreX.in" className="font-medium text-blue-600 hover:text-blue-700 transition-colors">contact support</a>.</p>
           </div>
         </div>
       </main>
@@ -722,15 +722,15 @@ function Pricing() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center"><HiOutlineCube className="w-5 h-5 text-white" /></div>
-              <span className="text-xl font-bold text-white">BizFlow</span>
+              <span className="text-xl font-bold text-white">StoreX</span>
             </div>
             <div className="flex items-center gap-8 text-sm">
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-              <a href="mailto:support@bizflow.in" className="hover:text-white transition-colors">support@bizflow.in</a>
+              <a href="mailto:support@StoreX.in" className="hover:text-white transition-colors">support@StoreX.in</a>
             </div>
           </div>
-          <div className="mt-8 pt-6 border-t border-gray-800 text-center"><p className="text-sm">&copy; 2026 BizFlow. All rights reserved.</p></div>
+          <div className="mt-8 pt-6 border-t border-gray-800 text-center"><p className="text-sm">&copy; 2026 StoreX. All rights reserved.</p></div>
         </div>
       </footer>
     </div>

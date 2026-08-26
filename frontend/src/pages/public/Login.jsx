@@ -63,7 +63,7 @@ function Login() {
       <div className="text-center mb-8">
         <h1 className="text-2xl font-bold text-gray-900">Welcome back</h1>
         <p className="text-sm text-gray-500 mt-1.5">
-          Sign in to your BizFlow account to continue
+          Sign in to your StoreX account to continue
         </p>
       </div>
 

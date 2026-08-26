@@ -32,7 +32,7 @@ const STAFF_PERMISSIONS = [
 
 const fixRoles = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/bizflow');
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/StoreX');
     console.log('Connected to MongoDB');
 
     const managerResult = await Role.updateMany(

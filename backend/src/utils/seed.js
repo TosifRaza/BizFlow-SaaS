@@ -49,21 +49,21 @@ const seedPlans = async () => {
 };
 
 const seedSuperAdmin = async () => {
-  const existing = await User.findOne({ email: 'admin@bizflow.com' });
+  const existing = await User.findOne({ email: 'admin@StoreX.com' });
   if (existing) {
     console.log('Super admin already exists, skipping...');
     return existing;
   }
   const admin = await User.create({
-    name: 'BizFlow Admin', email: 'admin@bizflow.com', phone: '9999999999',
+    name: 'StoreX Admin', email: 'admin@StoreX.com', phone: '9999999999',
     password: 'Admin@123', role: 'super_admin', status: 'active',
   });
-  console.log('Super admin created: admin@bizflow.com / Admin@123');
+  console.log('Super admin created: admin@StoreX.com / Admin@123');
   return admin;
 };
 
 const seedDemoBusiness = async (plans) => {
-  const existingUser = await User.findOne({ email: 'demo@bizflow.com' });
+  const existingUser = await User.findOne({ email: 'demo@StoreX.com' });
   if (existingUser) {
     console.log('Demo business already exists, skipping...');
     return existingUser;
@@ -85,7 +85,7 @@ const seedDemoBusiness = async (plans) => {
   });
 
   const user = await User.create({
-    name: 'Demo Owner', email: 'demo@bizflow.com', phone: '9876543210',
+    name: 'Demo Owner', email: 'demo@StoreX.com', phone: '9876543210',
     password: 'Demo@123', role: 'owner', businessId: business._id, status: 'active',
   });
   business.createdBy = user._id;
@@ -247,7 +247,7 @@ const seedDemoBusiness = async (plans) => {
     });
   }
 
-  console.log('Demo business created: demo@bizflow.com / Demo@123');
+  console.log('Demo business created: demo@StoreX.com / Demo@123');
   console.log('  - 5 categories, 15 products, 7 customers, 3 suppliers');
   console.log('  - 12 sales, 6 purchases, 8 expenses');
   return user;

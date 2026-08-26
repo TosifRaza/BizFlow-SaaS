@@ -17,7 +17,7 @@ function Privacy() {
             </section>
             <section>
               <h2 className="text-lg font-semibold text-gray-900">2. How We Use Your Information</h2>
-              <p className="text-sm text-gray-600 leading-relaxed mt-2">We use your information to provide and improve BizFlow services, process transactions, send service-related notifications, and respond to support requests. We do not sell your personal data to third parties.</p>
+              <p className="text-sm text-gray-600 leading-relaxed mt-2">We use your information to provide and improve StoreX services, process transactions, send service-related notifications, and respond to support requests. We do not sell your personal data to third parties.</p>
             </section>
             <section>
               <h2 className="text-lg font-semibold text-gray-900">3. Data Security</h2>
@@ -29,11 +29,11 @@ function Privacy() {
             </section>
             <section>
               <h2 className="text-lg font-semibold text-gray-900">5. Your Rights</h2>
-              <p className="text-sm text-gray-600 leading-relaxed mt-2">You have the right to access, correct, or delete your personal data. You may also export your data or object to certain processing activities. To exercise these rights, contact <a href="mailto:support@bizflow.in" className="text-blue-600 hover:text-blue-700">support@bizflow.in</a>.</p>
+              <p className="text-sm text-gray-600 leading-relaxed mt-2">You have the right to access, correct, or delete your personal data. You may also export your data or object to certain processing activities. To exercise these rights, contact <a href="mailto:support@StoreX.in" className="text-blue-600 hover:text-blue-700">support@StoreX.in</a>.</p>
             </section>
             <section>
               <h2 className="text-lg font-semibold text-gray-900">6. Contact</h2>
-              <p className="text-sm text-gray-600 leading-relaxed mt-2">For privacy-related questions, contact us at <a href="mailto:support@bizflow.in" className="text-blue-600 hover:text-blue-700">support@bizflow.in</a>.</p>
+              <p className="text-sm text-gray-600 leading-relaxed mt-2">For privacy-related questions, contact us at <a href="mailto:support@StoreX.in" className="text-blue-600 hover:text-blue-700">support@StoreX.in</a>.</p>
             </section>
           </div>
         </div>
@@ -42,9 +42,9 @@ function Privacy() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center"><HiOutlineCube className="w-5 h-5 text-white" /></div>
-            <span className="text-xl font-bold text-white">BizFlow</span>
+            <span className="text-xl font-bold text-white">StoreX</span>
           </div>
-          <p className="text-sm">© 2026 BizFlow. All rights reserved.</p>
+          <p className="text-sm">© 2026 StoreX. All rights reserved.</p>
         </div>
       </footer>
     </div>
