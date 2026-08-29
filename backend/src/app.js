@@ -93,7 +93,7 @@ const frontendPath = path.join(__dirname, '../frontend/dist');
 app.use(express.static(frontendPath));
 
 // SPA fallback — serve index.html for all non-API, non-file routes
-app.get('*', (_req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
